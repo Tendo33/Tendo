@@ -1,4 +1,4 @@
 # SUN jinfeng
 Repository for SUNjinfeng
 Projet PAINT
-main est dans class Windows
+main est dans class test
