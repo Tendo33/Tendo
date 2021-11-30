@@ -42,11 +42,11 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
             ObjectOutputStream oos = new ObjectOutputStream(ops);
 
             oos.writeInt(list.size());
-            for (int i = 0; i < list.size(); i++) {
-                oos.writeObject(list.get(i));
+            for (Figure figure : list) {
+                oos.writeObject(figure);
             }
             oos.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

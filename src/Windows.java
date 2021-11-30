@@ -92,18 +92,11 @@ public class Windows extends JFrame implements ActionListener {
         contentPanel.add(southPanel, "South");
         contentPanel.add(drawing, "Center");
 
+
         this.setVisible(true);
 
     }
 
-    /************************************************/
-
-    public static void main(String args[]) {
-
-        Windows win = new Windows("Let's Paint", 800, 600);
-    }
-
-    /************************************************/
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -166,20 +159,20 @@ public class Windows extends JFrame implements ActionListener {
                 break;
             case "Save":
                 JFileChooser jfs = new JFileChooser();
-                int x = jfs.showOpenDialog(this);
-                if (x == JFileChooser.CANCEL_OPTION) {
-                    System.out.println("You are cancelled");
+                int c = jfs.showSaveDialog(this);
+                if (c == JFileChooser.CANCEL_OPTION) {
+                    System.out.println("You are Cancelled");
                     break;
-                } else {
-                    String nameFile = jfs.getSelectedFile().getAbsolutePath();
-                    drawing.saveDrawing(nameFile);
                 }
+                String nameFileClose = jfs.getSelectedFile().getAbsolutePath();
+                drawing.saveDrawing(nameFileClose);
                 break;
+
             case "Open":
                 JFileChooser jfo = new JFileChooser();
                 int y = jfo.showOpenDialog(this);
                 if (y == JFileChooser.CANCEL_OPTION) {
-                    System.out.println("Cancelled");
+                    System.out.println("You are Cancelled");
                     break;
                 }
                 String nameFileOpen = jfo.getSelectedFile().getAbsolutePath();
@@ -191,6 +184,7 @@ public class Windows extends JFrame implements ActionListener {
         }
 
     }
+
 
 }
 
