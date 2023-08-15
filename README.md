@@ -1,4 +1,2 @@
-# SUN jinfeng
-Repository for SUNjinfeng
-Projet PAINT
-main est dans class test
+# Projet PAINT
+main fail est dans la class test
